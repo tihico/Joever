@@ -7,6 +7,10 @@ abstract class EnitityInheritance : MonoBehaviour
     [SerializeField] private string _name;
     [SerializeField] private GameObject _gameObject;
 
+    public int Hp
+    {
+        get { return _hp; }
+    }
     public void death()
     {
         if(_hp <= 0)
