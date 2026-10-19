@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public class TowerInheritance : MonoBehaviour
+ class TowerInheritance : EnitityInheritance
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] private int _dmg;
     [SerializeField] private int _range;
+
+    private EnemyInheritance _enemy;
     public void Attack()
     {
         //spawn bullet here
@@ -12,15 +13,9 @@ public class TowerInheritance : MonoBehaviour
 
     public void DmgTaken()
     {
+        _hp -= _enemy.Dmg;
+    }
 
-    }
-    
-        private void OnCollisionEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Enemy"))
-        {
-            //_hp -= 
-        }
-    }
+  
 }
-
+//make the target prioritisation of the towers based off of who is first through a list and adque (adque might not be it but it's simular)
