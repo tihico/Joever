@@ -129,11 +129,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2094143469677530876, guid: 27000df28d538b14da0e9bca3dbdc9f5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.17
+      value: -4.31
       objectReference: {fileID: 0}
     - target: {fileID: 2094143469677530876, guid: 27000df28d538b14da0e9bca3dbdc9f5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.56
+      value: 1.17
       objectReference: {fileID: 0}
     - target: {fileID: 2094143469677530876, guid: 27000df28d538b14da0e9bca3dbdc9f5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -171,6 +171,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tier 1 normal enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4915030020368116452, guid: 27000df28d538b14da0e9bca3dbdc9f5, type: 3}
+      propertyPath: _dmg
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915030020368116452, guid: 27000df28d538b14da0e9bca3dbdc9f5, type: 3}
+      propertyPath: _desc
+      value: avrage enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -188,6 +196,7 @@ GameObject:
   - component: {fileID: 602817936}
   - component: {fileID: 602817935}
   - component: {fileID: 602817938}
+  - component: {fileID: 602817939}
   m_Layer: 0
   m_Name: Test Tower
   m_TagString: Tower
@@ -203,7 +212,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602817934}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -329,6 +338,24 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.025876045}
   m_Size: {x: 1, y: 1.3709147}
   m_Direction: 0
+--- !u!114 &602817939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602817934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a2dd2c540a552646b3a9ab89243173a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hp: 100
+  _name: towa
+  _desc: test tower
+  _gameObject: {fileID: 602817934}
+  _dmg: 0
+  _range: 0
 --- !u!1 &1207517306
 GameObject:
   m_ObjectHideFlags: 0

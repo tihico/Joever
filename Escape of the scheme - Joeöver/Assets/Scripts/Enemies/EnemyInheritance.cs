@@ -3,6 +3,10 @@ using UnityEngine;
 abstract class EnemyInheritance : EnitityInheritance
 {
     [SerializeField] private int _dmg;
+
+    private TowerInheritance _tower;
+
+
     public int Dmg
     {
         get 
@@ -10,15 +14,23 @@ abstract class EnemyInheritance : EnitityInheritance
            return _dmg; 
         }
     }
-
-    private TowerInheritance _tower;
+    private void Start()
+    {
+        _tower = FindAnyObjectByType<TowerInheritance>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Tower"))
         {
-            _tower.DmgTaken();
+            
+            //_tower.DmgTaken(collision.gameObject);
+            Debug.Log("Dmged tower");
         }
     }
+
+    /*
+    Forgot the get component and it doesn't know wich gameobject it 'touches'
+    */
 
     /*   This is better used for the bullet
     private void OnCollision2D(Collision2D collision)
