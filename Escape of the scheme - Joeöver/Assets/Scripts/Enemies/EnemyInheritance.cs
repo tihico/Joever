@@ -23,8 +23,10 @@ abstract class EnemyInheritance : EnitityInheritance
         if (collision.CompareTag("Tower"))
         {
             
-            //_tower.DmgTaken(collision.gameObject);
             Debug.Log("Dmged tower");
+            _tower.DmgTaken();
+            //doesn't specify a gameObject
+
         }
     }
 

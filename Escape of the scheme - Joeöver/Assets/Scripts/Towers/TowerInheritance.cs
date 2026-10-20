@@ -6,6 +6,10 @@ using UnityEngine;
     [SerializeField] private int _range;
 
     private EnemyInheritance _enemy;
+    public void Start()
+    {
+        _enemy = FindAnyObjectByType<EnemyInheritance>();
+    }
     public void Attack()
     {
         //spawn bullet here
