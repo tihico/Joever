@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8206523210804303047
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3637181088128322156}
+  - component: {fileID: 4596695128771251663}
+  m_Layer: 0
+  m_Name: Scripts Object
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3637181088128322156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8206523210804303047}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.50042146, y: -0.76305526, z: 0.01344712}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4596695128771251663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8206523210804303047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a4b3340ab4d1994892b452231cec6b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _towerSpotTag: towerSpot
+  _towerOne: {fileID: 6593060844764577332, guid: 5f14303496bd9394bbed54405a7b14e1, type: 3}
+  _towerTwo: {fileID: 6593060844764577332, guid: 3bcaa0da3d357e54eb6de9c5889cf0bb, type: 3}
+  _towerThree: {fileID: 6593060844764577332, guid: 4d37e948955f29042b5a0ffea4211635, type: 3}
+  _towerFour: {fileID: 6593060844764577332, guid: bd0f44cebfbeed342ac4e068e4af4b8b, type: 3}
+  hoverdColor: {r: 0.4264151, g: 0.4264151, b: 0.4264151, a: 1}
+  unhoverdColor: {r: 0.54901963, g: 0.54901963, b: 0.54901963, a: 1}

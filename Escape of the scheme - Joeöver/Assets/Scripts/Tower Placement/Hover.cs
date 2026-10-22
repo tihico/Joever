@@ -11,19 +11,18 @@ public class Hover : MonoBehaviour
     Transform prevHoverObject, nextHoverObject;
 
     [SerializeField] private string _towerSpotTag;
-    [SerializeField] private GameObject _towerPrefab;
+    [SerializeField] private GameObject _towerOne;
+    [SerializeField] private GameObject _towerTwo;
+    [SerializeField] private GameObject _towerThree;
+    [SerializeField] private GameObject _towerFour;
 
     [SerializeField] private Color hoverdColor;
     [SerializeField] private Color unhoverdColor;
 
+    private int _towerSelected = 1;
+
     private bool towerPlaced = false;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         mousePosition = Input.mousePosition;
@@ -43,7 +42,22 @@ public class Hover : MonoBehaviour
             {
                 Vector3 position = raycastHit2D.transform.position;
 
-                Instantiate(_towerPrefab, position, quaternion.identity);
+                if (_towerSelected == 1)
+                {
+                    Instantiate(_towerOne, position, quaternion.identity);
+                }
+                else if (_towerSelected == 2)
+                {
+                    Instantiate(_towerTwo, position, quaternion.identity);
+                }
+                else if (_towerSelected == 3)
+                {
+                    Instantiate(_towerThree, position, quaternion.identity);
+                }
+                else if (_towerSelected == 4)
+                {
+                    Instantiate(_towerFour, position, quaternion.identity);
+                }
             }
 
         }
@@ -54,5 +68,25 @@ public class Hover : MonoBehaviour
                 prevHoverObject.GetComponent<SpriteRenderer>().color = unhoverdColor;
             }
         }
+    }
+
+    public void TowerOne()
+    {
+        _towerSelected = 1;
+    }
+
+    public void TowerTwo()
+    {
+        _towerSelected = 2;
+    }
+
+    public void TowerThree()
+    {
+        _towerSelected = 3;
+    }
+
+    public void TowerFour()
+    {
+        _towerSelected = 4;
     }
 }
