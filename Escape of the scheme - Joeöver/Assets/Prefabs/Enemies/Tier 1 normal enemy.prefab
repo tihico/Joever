@@ -234,8 +234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552f35639a266d8488490d762f8fdcd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: 0
-  _name: 
-  _desc: 
-  _gameObject: {fileID: 0}
-  _dmg: 10
+  _hp: 50
+  _name: tier 1 normal enemy
+  _desc: low dmg and health
+  _gameObject: {fileID: 4152573948281731807}
+  _dmg: 2
