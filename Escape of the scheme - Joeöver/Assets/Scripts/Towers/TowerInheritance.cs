@@ -20,6 +20,10 @@ using UnityEngine;
         _hp -= _enemy.Dmg;
     }
 
+    public void Update()
+    {
+        death();
+    }
   
 }
 //make the target prioritisation of the towers based off of who is first through a list and adque (adque might not be it but it's simular)
