@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class tempSD : MonoBehaviour
+public class DestroyTower : MonoBehaviour
 {
     Vector3 mousePosition;
     RaycastHit2D raycastHit2D;

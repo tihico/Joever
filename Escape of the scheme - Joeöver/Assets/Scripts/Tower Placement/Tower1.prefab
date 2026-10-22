@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2933886047170511849}
   - component: {fileID: 8047361290295740089}
   m_Layer: 0
-  m_Name: phP
+  m_Name: Tower1
   m_TagString: tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
