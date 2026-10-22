@@ -40,6 +40,12 @@ abstract class EnemyInheritance : EnitityInheritance
         if (collision)
     }
     */
+    public void Update()
+    {
+        death();  
+        //add coin increase / spawn here
+    }
+
     public void DmgTaken() //make it so it defaults on BULLETS and change the layers so that towers can't hit eachother this way later bulelts CAN hit the tower :D but you'll have to add enemy to the tag props.
     {
 
