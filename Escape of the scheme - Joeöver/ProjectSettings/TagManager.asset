@@ -8,6 +8,7 @@ TagManager:
   - map
   - towerSpot
   - tower
+  - Barricade
   layers:
   - Default
   - TransparentFX
