@@ -8,6 +8,7 @@ TagManager:
   - map
   - towerSpot
   - tower
+  - Enemy
   layers:
   - Default
   - TransparentFX
