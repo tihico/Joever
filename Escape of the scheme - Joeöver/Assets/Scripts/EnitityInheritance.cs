@@ -8,7 +8,7 @@ abstract class EnitityInheritance : MonoBehaviour
     [SerializeField] protected string _desc;
     [SerializeField] private GameObject _gameObject;
 
-    public void death()
+    public void Death()
     {
         if(_hp <= 0)
         {

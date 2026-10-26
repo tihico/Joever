@@ -22,7 +22,7 @@ using UnityEngine;
 
     public void Update()
     {
-        death();
+        Death();
     }
   
 }

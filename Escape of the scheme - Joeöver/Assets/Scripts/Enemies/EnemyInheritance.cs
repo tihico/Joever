@@ -1,10 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 abstract class EnemyInheritance : EnitityInheritance
 {
     [SerializeField] private int _dmg;
     [SerializeField] private float _attackCooldown;
-
+    private bool _attack = false;
 
     private TowerInheritance _tower;
 
@@ -21,38 +23,34 @@ abstract class EnemyInheritance : EnitityInheritance
         _tower = FindAnyObjectByType<TowerInheritance>();
     }
     private void OnTriggerStay2D(Collider2D collision)
-    {
+    { //by THE component setting select collision continious & never sleeping to make the ontriggerstay act continiously+   
+        print(collision.gameObject.name);
         if (collision.CompareTag("Tower"))
         {
             
             Debug.Log("Dmged tower");
-            _tower.DmgTaken();
-            //add cooldown
-        }
+
+            //the boolean makes sure that the startcoroutine isn't constantly activated
+            if (!_attack)
+                StartCoroutine(Attack(_attackCooldown));
+                   }
     }
 
-    /*
-    Forgot the get component and it doesn't know wich gameobject it 'touches'
-    */
 
-    /*   This is better used for the bullet
-    private void OnCollision2D(Collision2D collision)
+    
+    IEnumerator Attack(float attackCooldown)
     {
-        if (collision)
+        _attack = true;
+        yield return new WaitForSeconds(attackCooldown);
+        _tower.DmgTaken();
+        _attack = false;     
     }
-    */
-    ///StartCoroutine(attack(attackCooldown));
 
-    ///IEnumerator Attack(float attackCooldown)
-    ///{
 
-        ///yield return new WaitForSeconds(attackCooldown);
 
-        
-    ///}
     public void Update()
     {
-        death();  
+        Death();  
         //add coin increase / spawn here
     }
 

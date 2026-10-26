@@ -129,11 +129,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 915992507536935521, guid: 27000df28d538b14da0e9bca3dbdc9f5, type: 3}
       propertyPath: _dmg
-      value: 25
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 915992507536935521, guid: 27000df28d538b14da0e9bca3dbdc9f5, type: 3}
+      propertyPath: _attackCooldown
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1266646455566256492, guid: 27000df28d538b14da0e9bca3dbdc9f5, type: 3}
       propertyPath: m_BodyType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266646455566256492, guid: 27000df28d538b14da0e9bca3dbdc9f5, type: 3}
+      propertyPath: m_SleepingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266646455566256492, guid: 27000df28d538b14da0e9bca3dbdc9f5, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2094143469677530876, guid: 27000df28d538b14da0e9bca3dbdc9f5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -236,7 +248,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!212 &602817936
