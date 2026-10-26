@@ -8,6 +8,8 @@ public class DestroyTower : MonoBehaviour
 
     [SerializeField] private string _towerTag;
 
+    [SerializeField] private GameObject Gui;
+
     void Update()
     {
         mousePosition = Input.mousePosition;
@@ -18,7 +20,10 @@ public class DestroyTower : MonoBehaviour
 
         raycastHit2D = Physics2D.Raycast(mouseRay.origin, mouseRay.direction);
         nextHoverObject = raycastHit2D ? raycastHit2D.collider.transform : null;
+    }
 
+    public void Sell()
+    {
         if (nextHoverObject && nextHoverObject.CompareTag(_towerTag))
         {
             if (Input.GetMouseButtonDown(0))

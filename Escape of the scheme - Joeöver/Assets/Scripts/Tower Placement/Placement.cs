@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEditor.FilePathAttribute;
 
-public class Hover : MonoBehaviour
+public class Placement : MonoBehaviour
 {
     Vector3 mousePosition;
     RaycastHit2D raycastHit2D;
