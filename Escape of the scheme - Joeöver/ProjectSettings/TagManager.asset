@@ -9,6 +9,7 @@ TagManager:
   - towerSpot
   - tower
   - Enemy
+  - gui
   layers:
   - Default
   - TransparentFX

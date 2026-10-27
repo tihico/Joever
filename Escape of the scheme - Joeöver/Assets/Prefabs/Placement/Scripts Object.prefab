@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3637181088128322156}
   - component: {fileID: 4596695128771251663}
+  - component: {fileID: 6573311436793425699}
   m_Layer: 0
   m_Name: Scripts Object
   m_TagString: Untagged
@@ -51,3 +52,18 @@ MonoBehaviour:
   _towerFour: {fileID: 6593060844764577332, guid: bd0f44cebfbeed342ac4e068e4af4b8b, type: 3}
   hoverdColor: {r: 0.4264151, g: 0.4264151, b: 0.4264151, a: 1}
   unhoverdColor: {r: 0.54901963, g: 0.54901963, b: 0.54901963, a: 1}
+--- !u!114 &6573311436793425699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8206523210804303047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfdcd7a4275161a4387aab9b1897b19e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _towerTag: 
+  _gui: {fileID: 2370863110996270443, guid: 021adf1fdbb6c53439122f176b60657a, type: 3}
+  _parent: {fileID: 0}
