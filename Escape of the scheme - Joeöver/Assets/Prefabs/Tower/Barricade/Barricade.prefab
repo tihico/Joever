@@ -108,7 +108,7 @@ MonoBehaviour:
   _gameObject: {fileID: 482941950528632285}
   _dmg: 0
   _range: 0
-  _armor: 2
+  _armor: 3
 --- !u!70 &3222553716272355716
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
