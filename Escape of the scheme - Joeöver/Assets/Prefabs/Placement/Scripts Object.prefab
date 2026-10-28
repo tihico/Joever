@@ -64,6 +64,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfdcd7a4275161a4387aab9b1897b19e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _towerTag: 
-  _gui: {fileID: 2370863110996270443, guid: 021adf1fdbb6c53439122f176b60657a, type: 3}
-  _parent: {fileID: 0}
+  _towerTag: tower
+  _gui: {fileID: 0}

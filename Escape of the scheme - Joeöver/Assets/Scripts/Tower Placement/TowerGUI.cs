@@ -12,9 +12,9 @@ public class TowerGUI : MonoBehaviour
 
     [SerializeField] private GameObject _gui;
 
-    private string _selectedTower;
-
     private bool _guiCheck = false;
+
+    TowerInfo towerInfo;
 
     void Update()
     {
@@ -44,8 +44,7 @@ public class TowerGUI : MonoBehaviour
 
     public void SellTower()
     {
-        _selectedTower = raycastHit2D.transform.gameObject.name;
-        //Debug.Log(_selectedTower);
-        //Destroy(GameObject.Find(_selectedTower));
+        towerInfo = GameObject.FindGameObjectWithTag(_towerTag).GetComponent<TowerInfo>();
+        towerInfo.Destroy();
     }
 }
