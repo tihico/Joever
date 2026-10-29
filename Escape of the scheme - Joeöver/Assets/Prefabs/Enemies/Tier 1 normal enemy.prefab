@@ -81,6 +81,7 @@ GameObject:
   - component: {fileID: 1266646455566256492}
   - component: {fileID: 2608929570450451477}
   - component: {fileID: 915992507536935521}
+  - component: {fileID: -8847175965221164523}
   m_Layer: 0
   m_Name: Tier 1 normal enemy
   m_TagString: Untagged
@@ -239,3 +240,17 @@ MonoBehaviour:
   _desc: low dmg and health
   _gameObject: {fileID: 4152573948281731807}
   _dmg: 2
+  _attackCooldown: 0
+--- !u!114 &-8847175965221164523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4152573948281731807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfba779330b9e54889e52e55747726d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
