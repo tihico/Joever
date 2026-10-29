@@ -16,10 +16,10 @@ namespace Assets.Scripts.Towers
              private void OnTriggerStay2D(Collider2D collision)
         { //by THE component setting select collision continious & never sleeping to make the ontriggerstay act continiously+   
             print(collision.gameObject.name);
-            if (collision.CompareTag("Tower"))
+            if (collision.CompareTag("Enemy"))
             {
 
-                Debug.Log("Dmged tower");
+                Debug.Log("Dmged enemy");
 
                 //the boolean makes sure that the startcoroutine isn't constantly activated
                 if (!_attack)
