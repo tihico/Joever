@@ -41,7 +41,6 @@ abstract class EnemyInheritance : EnitityInheritance
 
         if (collision.CompareTag("Barricade"))
         {
-            Debug.Log("Dmged tower");
 
             float _prolongedCooldown = _attackCooldown * 1.5f;
 
