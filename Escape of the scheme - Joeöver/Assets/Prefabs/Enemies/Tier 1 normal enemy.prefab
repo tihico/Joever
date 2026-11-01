@@ -167,7 +167,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4152573948281731807}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -183,8 +183,8 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &2608929570450451477
 CircleCollider2D:
@@ -238,4 +238,5 @@ MonoBehaviour:
   _name: tier 1 normal enemy
   _desc: low dmg and health
   _gameObject: {fileID: 4152573948281731807}
-  _dmg: 2
+  _dmg: 12
+  _attackCooldown: 5

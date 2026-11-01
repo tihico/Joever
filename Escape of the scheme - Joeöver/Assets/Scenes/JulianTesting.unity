@@ -129,11 +129,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2094143469677530876, guid: 27000df28d538b14da0e9bca3dbdc9f5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.886768
+      value: -3.09
       objectReference: {fileID: 0}
     - target: {fileID: 2094143469677530876, guid: 27000df28d538b14da0e9bca3dbdc9f5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9871938
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: 2094143469677530876, guid: 27000df28d538b14da0e9bca3dbdc9f5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -337,13 +337,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test Tower
       objectReference: {fileID: 0}
+    - target: {fileID: 2752761333500065903, guid: 4c3f75ee4218bc0468bc98a700e199da, type: 3}
+      propertyPath: m_TagString
+      value: Barricade
+      objectReference: {fileID: 0}
     - target: {fileID: 8854213105842255983, guid: 4c3f75ee4218bc0468bc98a700e199da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.599871
+      value: -1.24
       objectReference: {fileID: 0}
     - target: {fileID: 8854213105842255983, guid: 4c3f75ee4218bc0468bc98a700e199da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.39676112
+      value: 2.71
       objectReference: {fileID: 0}
     - target: {fileID: 8854213105842255983, guid: 4c3f75ee4218bc0468bc98a700e199da, type: 3}
       propertyPath: m_LocalPosition.z
@@ -377,7 +381,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7233996086845910135, guid: 4c3f75ee4218bc0468bc98a700e199da, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

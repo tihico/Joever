@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4859638886064152336}
   - component: {fileID: 4413883137470452244}
   - component: {fileID: 3281275346041228276}
-  - component: {fileID: 7233996086845910135}
+  - component: {fileID: 5089587913695802024}
   m_Layer: 0
   m_Name: Test Tower
   m_TagString: Tower
@@ -115,7 +115,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!70 &3281275346041228276
 CapsuleCollider2D:
@@ -154,7 +154,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.025876045}
   m_Size: {x: 1, y: 1.3709147}
   m_Direction: 0
---- !u!114 &7233996086845910135
+--- !u!114 &5089587913695802024
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,12 +163,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2752761333500065903}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a2dd2c540a552646b3a9ab89243173a, type: 3}
+  m_Script: {fileID: 11500000, guid: 0937283cdd4dd8f4a9fb8a4c50157262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _hp: 100
-  _name: towa
-  _desc: test tower
+  _name: tower
+  _desc: shoots
   _gameObject: {fileID: 2752761333500065903}
-  _dmg: 0
+  _dmg: 10
   _range: 0

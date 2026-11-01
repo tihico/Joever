@@ -23,16 +23,16 @@ namespace Assets.Scripts.Towers
 
                 //the boolean makes sure that the startcoroutine isn't constantly activated
                 if (!_attack)
-                    StartCoroutine(Attack(_attackCooldown));
+                    StartCoroutine(AttackWithCoolDown(_attackCooldown));
             }
         }
 
 
-        IEnumerator Attack(float attackCooldown)
+        private IEnumerator AttackWithCoolDown(float attackCooldown)
         {
             _attack = true;
             yield return new WaitForSeconds(attackCooldown);
-            _enemy.DmgTaken();
+            _enemy.DmgTaken(Dmg);
             _attack = false;
         }
 

@@ -1,13 +1,13 @@
 using UnityEngine;
 
- class TowerInheritance : EnitityInheritance
+abstract class TowerInheritance : EnitityInheritance
 {
-    [SerializeField] protected int _dmg;
+    [SerializeField] protected float _dmg;
     [SerializeField] protected int _range;
 
 
     protected EnemyInheritance _enemy;
-    public int Dmg
+    public float Dmg
     {
         get
         {
@@ -16,16 +16,16 @@ using UnityEngine;
     }
     public void Start()
     {
-        _enemy = FindAnyObjectByType<EnemyInheritance>();
+        //_enemy = FindAnyObjectByType<EnemyInheritance>();
     }
-    public virtual void Attack()
+    public virtual void Attack(float Dmg)
     {
         //spawn bullet here
     }
 
-    public virtual void DmgTaken()
+    public virtual void DmgTaken(float Dmg)
     {
-        _hp -= _enemy.Dmg;
+        _hp -= Dmg;
     }
 
     public void Update()

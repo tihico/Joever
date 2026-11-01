@@ -7,10 +7,9 @@ abstract class EnemyInheritance : EnitityInheritance
     [SerializeField] private int _dmg;
     [SerializeField] private float _attackCooldown;
     private bool _attack = false;
-    private bool _slowAttack = false;
+    //private bool _barricadeDetected = false;
 
     private TowerInheritance _tower;
-    private BarricadeInheritance _barricade;
 
 
     public int Dmg
@@ -22,34 +21,25 @@ abstract class EnemyInheritance : EnitityInheritance
     }
     private void Start()
     {
-        _tower = FindAnyObjectByType<TowerInheritance>();
-        _barricade = FindAnyObjectByType<BarricadeInheritance>();
+       // _tower = FindAnyObjectByType<TowerInheritance>();
+       // _barricade = FindAnyObjectByType<BarricadeInheritance>();
 
     }
     private void OnTriggerStay2D(Collider2D collision)
     { //by THE component setting select collision continious & never sleeping to make the ontriggerstay act continiously+   
         print(collision.gameObject.name);
-        if (collision.CompareTag("Tower"))
+        if (collision.CompareTag("Tower") || collision.CompareTag("Barricade"))
         {
-            
+            _tower = collision.GetComponent<TowerInheritance>();  
             Debug.Log("Dmged tower");
 
             //the boolean makes sure that the startcoroutine isn't constantly activated
             if (!_attack)
                 StartCoroutine(Attack(_attackCooldown));
         }
+        
 
-        if (collision.CompareTag("Barricade"))
-        {
-
-            float _prolongedCooldown = _attackCooldown * 1.5f;
-
-            Debug.Log("Dmged tower");
-
-            //the boolean makes sure that the startcoroutine isn't constantly activated
-            if (!_slowAttack)
-                StartCoroutine(Attack2(_prolongedCooldown));
-        }
+        
     }
 
 
@@ -58,16 +48,11 @@ abstract class EnemyInheritance : EnitityInheritance
     {
         _attack = true;
         yield return new WaitForSeconds(attackCooldown);
-        _tower.DmgTaken();
+        //_tower.DmgTaken();
+        _tower.DmgTaken(_dmg);
         _attack = false;     
     }
-    IEnumerator Attack2(float prolongedCooldown)
-    {
-        _slowAttack = true;
-        yield return new WaitForSeconds(prolongedCooldown);
-        _barricade.DmgTaken();
-        _slowAttack = false;
-    }
+   
 
 
     public void Update()
@@ -76,9 +61,12 @@ abstract class EnemyInheritance : EnitityInheritance
         //add coin increase / spawn here
     }
 
-    public void DmgTaken() 
+    public void DmgTaken(float Dmg) 
     //make it so it defaults on BULLETS and change the layers so that towers can't hit eachother this way later bulelts CAN hit the tower :D but you'll have to add enemy to the tag props.
     {
-        _hp -= _tower.Dmg;
+
+        _hp -= Dmg;
+       // _hp -= _barricade.Dmg;
+
     }
 }
