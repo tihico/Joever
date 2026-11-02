@@ -10,7 +10,7 @@ namespace Assets.Scripts.Towers
 {
     class TrapTower : TowerInheritance
     {
-        [SerializeField] private float _attackCooldown;
+        
         private bool _attack;
        
              private void OnTriggerStay2D(Collider2D collision)
@@ -19,7 +19,8 @@ namespace Assets.Scripts.Towers
             if (collision.CompareTag("Enemy"))
             {
 
-                Debug.Log("Dmged enemy");
+                Debug.Log("Trapped on enemy");
+                _enemy = collision.GetComponent<EnemyInheritance>();
 
                 //the boolean makes sure that the startcoroutine isn't constantly activated
                 if (!_attack)

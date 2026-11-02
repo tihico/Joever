@@ -1,10 +1,15 @@
+using Assets.Scripts.Towers;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 abstract class TowerInheritance : EnitityInheritance
 {
     [SerializeField] protected float _dmg;
     [SerializeField] protected int _range;
-
+    private BulletSpawner _spawner;
+    private bool _attack = false;
+    [SerializeField] protected float _attackCooldown;
 
     protected EnemyInheritance _enemy;
     public float Dmg
@@ -14,13 +19,42 @@ abstract class TowerInheritance : EnitityInheritance
             return _dmg;
         }
     }
+
+
     public void Start()
     {
-        //_enemy = FindAnyObjectByType<EnemyInheritance>();
+        _spawner = GetComponent<BulletSpawner>();
     }
     public virtual void Attack(float Dmg)
     {
-        //spawn bullet here
+        _spawner.SpawnBullet();
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    { //by THE component setting select collision continious & never sleeping to make the ontriggerstay act continiously+   
+        print(collision.gameObject.name);
+        if (collision.CompareTag("Enemy"))
+        {
+            
+            Debug.Log("Dmged tower");
+
+            //the boolean makes sure that the startcoroutine isn't constantly activated
+            if (!_attack)
+                StartCoroutine(Spawn(_attackCooldown));
+        }
+
+
+
+    }
+
+
+
+   
+    private IEnumerator Spawn(float attackCooldown)
+    {
+        _attack = true;
+        yield return new WaitForSeconds(attackCooldown);
+        Attack(Dmg);
+        _attack = false;
     }
 
     public virtual void DmgTaken(float Dmg)
