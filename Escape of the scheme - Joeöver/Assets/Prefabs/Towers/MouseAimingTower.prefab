@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 5936749751862346415}
   - component: {fileID: 8773918096658142547}
   - component: {fileID: 112843762441874922}
+  - component: {fileID: 2663829200213517272}
   m_Layer: 0
   m_Name: MouseAimingTower
-  m_TagString: Untagged
+  m_TagString: tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4227922121606088637}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: -2.3, z: 0}
+  m_LocalPosition: {x: -0.3538888, y: -3.82, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -117,3 +118,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canLook: 1
+--- !u!114 &2663829200213517272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4227922121606088637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0937283cdd4dd8f4a9fb8a4c50157262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hp: 100
+  _name: 
+  _desc: 
+  _gameObject: {fileID: 0}
+  _dmg: 25
+  _range: 100
+  _attackCooldown: 0
