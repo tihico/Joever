@@ -8,7 +8,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private GameObject[] enemyPrefabs;
     [SerializeField] private int baseEnemies = 8;
     [SerializeField] private float enemiesPerSecond = 0.5f;
-    [SerializeField] private float timeBetweenWaves = 5f;
+    [SerializeField] private float timeBetweenWaves = 2f;
     [SerializeField] private float difficultyScaling = 0.5f;
 
     private int currentWave = 1;
@@ -27,6 +27,7 @@ public class WaveManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(StartWave());
+        Debug.Log("Wave started");
     }
     private void Update()
     {
@@ -49,9 +50,11 @@ public class WaveManager : MonoBehaviour
     private void EnemyDestroyed()
     {
         enemiesAlive--;
+        Debug.Log(enemiesAlive + "enemiesAlive");
     }
     private IEnumerator StartWave()
     {
+        Debug.Log("Wave started");
         yield return new WaitForSeconds(timeBetweenWaves);
         isSpawning = true;
         enemiesLeftToSpawn = EnemiesPerWave();
@@ -59,6 +62,7 @@ public class WaveManager : MonoBehaviour
     
     private void EndWave()
     {
+        Debug.Log("Wave ended");
         isSpawning = false;
         timeSinceLastSpawn = 0f;
         currentWave++;
@@ -67,7 +71,7 @@ public class WaveManager : MonoBehaviour
     private void SpawnEnemy()
     {
         Debug.Log("Spawn Enemy");
-        GameObject prefabToSpawn = enemyPrefabs[2];
+        GameObject prefabToSpawn = enemyPrefabs[0];
         Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
         // change transform later 
     }

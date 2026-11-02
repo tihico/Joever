@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - gui
   - Barricade
+  - Waypoints
   layers:
   - Default
   - TransparentFX
