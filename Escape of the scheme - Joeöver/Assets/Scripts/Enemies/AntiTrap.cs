@@ -14,10 +14,10 @@ namespace Assets.Scripts.Enemies
         private void OnTriggerStay2D(Collider2D collision)
         { //by THE component setting select collision continious & never sleeping to make the ontriggerstay act continiously+   
             print(collision.gameObject.name);
-            if (collision.CompareTag("Bullet"))
+            if (collision.CompareTag("Trap") || collision.CompareTag("Barricade"))
             {
                 _tower = collision.GetComponent<TowerInheritance>();
-                Debug.Log("Dmged tower");
+                Debug.Log("trapped enemy");
 
                 //the boolean makes sure that the startcoroutine isn't constantly activated
                 if (!_attack)

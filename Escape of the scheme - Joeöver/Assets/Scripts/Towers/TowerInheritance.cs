@@ -32,7 +32,7 @@ abstract class TowerInheritance : EnitityInheritance
     private void OnTriggerStay2D(Collider2D collision)
     { //by THE component setting select collision continious & never sleeping to make the ontriggerstay act continiously+   
         print(collision.gameObject.name);
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") || collision.CompareTag("Hidden"))
         {
             _enemy = collision.GetComponent<EnemyInheritance>();
             Debug.Log("Dmged tower");
