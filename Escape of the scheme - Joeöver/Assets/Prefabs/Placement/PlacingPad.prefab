@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7637433597730319330}
   - component: {fileID: 7982199493287195326}
-  - component: {fileID: 5673409709652927580}
+  - component: {fileID: -6222905207133557852}
   m_Layer: 0
   m_Name: PlacingPad
   m_TagString: towerSpot
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &5673409709652927580
+--- !u!61 &-6222905207133557852
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
