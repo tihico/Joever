@@ -172,6 +172,7 @@ MonoBehaviour:
   _gameObject: {fileID: 3883215864102552449}
   _dmg: 100
   _attackCooldown: 0.1
+  _goldGain: 80
 --- !u!1 &7514371740126315789
 GameObject:
   m_ObjectHideFlags: 0

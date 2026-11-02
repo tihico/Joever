@@ -4,15 +4,16 @@ using UnityEngine;
 
 abstract class EnemyInheritance : EnitityInheritance
 {
-    [SerializeField] protected int _dmg;
+    [SerializeField] protected float _dmg;
     [SerializeField] protected float _attackCooldown;
+    [SerializeField] protected int _goldGain;
     protected bool _attack = false;
     //private bool _barricadeDetected = false;
-
+    protected Rescources _rescources;
     protected TowerInheritance _tower;
 
 
-    public int Dmg
+    public float Dmg
     {
         get 
         {
@@ -21,8 +22,7 @@ abstract class EnemyInheritance : EnitityInheritance
     }
     private void Start()
     {
-       // _tower = FindAnyObjectByType<TowerInheritance>();
-       // _barricade = FindAnyObjectByType<BarricadeInheritance>();
+       _rescources = FindAnyObjectByType<Rescources>();
 
     }
     private void OnTriggerStay2D(Collider2D collision)
@@ -61,6 +61,19 @@ abstract class EnemyInheritance : EnitityInheritance
         //add coin increase / spawn here
     }
 
+    public void GoldDrop()
+    {
+        _rescources.GainRecources(_goldGain);
+    }
+    public override void Death()
+    {
+        if (_hp <= 0)
+        {
+            GoldDrop();
+            Destroy(gameObject);
+        }
+
+    }
     public void DmgTaken(float Dmg) 
     //make it so it defaults on BULLETS and change the layers so that towers can't hit eachother this way later bulelts CAN hit the tower :D but you'll have to add enemy to the tag props.
     {
