@@ -154,7 +154,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!114 &3952141203437630175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,6 +173,7 @@ MonoBehaviour:
   _gameObject: {fileID: 482941950528632285}
   _dmg: 0
   _range: 0
+  _attackCooldown: 0
   _armor: 2
 --- !u!1 &1082212326585293274
 GameObject:

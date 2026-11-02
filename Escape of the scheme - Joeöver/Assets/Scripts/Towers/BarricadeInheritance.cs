@@ -21,7 +21,7 @@ abstract class BarricadeInheritance : TowerInheritance
     private void OnTriggerStay2D(Collider2D collision)
     { //by THE component setting select collision continious & never sleeping to make the ontriggerstay act continiously+   
         print(collision.gameObject.name);
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") || CompareTag("Hidden"))
         {
             _enemy = collision.GetComponent<EnemyInheritance>();
             

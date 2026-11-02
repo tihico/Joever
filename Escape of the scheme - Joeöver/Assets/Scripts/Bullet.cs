@@ -28,7 +28,7 @@ using UnityEngine;
         {
             _enemy = collision.GetComponent<EnemyInheritance>();
             Attack();
-            DestroyBullet();
+           
         }
     }
 
@@ -38,7 +38,7 @@ using UnityEngine;
         _enemy.DmgTaken(_damageValue);
     }
 
-    protected virtual void DestroyBullet()
+    public virtual void DestroyBullet()
     {
         base.Death();
     }

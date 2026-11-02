@@ -4,12 +4,12 @@ using UnityEngine;
 
 abstract class EnemyInheritance : EnitityInheritance
 {
-    [SerializeField] private int _dmg;
-    [SerializeField] private float _attackCooldown;
-    private bool _attack = false;
+    [SerializeField] protected int _dmg;
+    [SerializeField] protected float _attackCooldown;
+    protected bool _attack = false;
     //private bool _barricadeDetected = false;
 
-    private TowerInheritance _tower;
+    protected TowerInheritance _tower;
 
 
     public int Dmg
@@ -44,7 +44,7 @@ abstract class EnemyInheritance : EnitityInheritance
 
 
     
-    IEnumerator Attack(float attackCooldown)
+  public virtual IEnumerator Attack(float attackCooldown)
     {
         _attack = true;
         yield return new WaitForSeconds(attackCooldown);

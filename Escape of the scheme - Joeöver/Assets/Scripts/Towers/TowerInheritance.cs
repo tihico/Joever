@@ -34,26 +34,20 @@ abstract class TowerInheritance : EnitityInheritance
         print(collision.gameObject.name);
         if (collision.CompareTag("Enemy"))
         {
-            
+            _enemy = collision.GetComponent<EnemyInheritance>();
             Debug.Log("Dmged tower");
 
             //the boolean makes sure that the startcoroutine isn't constantly activated
             if (!_attack)
                 StartCoroutine(Spawn(_attackCooldown));
         }
-
-
-
     }
 
-
-
-   
     private IEnumerator Spawn(float attackCooldown)
     {
         _attack = true;
         yield return new WaitForSeconds(attackCooldown);
-        Attack(Dmg);
+        Attack(_dmg);
         _attack = false;
     }
 
