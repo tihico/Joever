@@ -11,7 +11,6 @@ class BaseScript : EnitityInheritance
         if (collision.CompareTag("Enemy"))
         {
             _hp--;
-            Death();
         }
     }
     public override void Death()
@@ -22,5 +21,9 @@ class BaseScript : EnitityInheritance
             SceneManager.LoadScene(_scene);
             Destroy(gameObject);
         }
+    }
+    private void Update()
+    {
+        Death();
     }
 }
