@@ -15,9 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/DeathScreen.unity
     guid: cfd84ccdf74930943bcf7d0b9c254394
   - enabled: 1
-    path: Assets/Scenes/ShilohPlacement.unity
+    path: Assets/Scenes/Map1.unity
     guid: 43e47a6465e78544ba72cbf8f23f17f2
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Map2.unity
     guid: 5c4dc1cb56c992245b544219f5a39019
   - enabled: 1
