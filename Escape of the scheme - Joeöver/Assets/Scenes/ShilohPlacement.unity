@@ -3620,8 +3620,8 @@ MonoBehaviour:
   _towerSpotTag: towerSpot
   _towerOne: {fileID: 6593060844764577332, guid: b2a2d88ed57f2424cb80d58a61dc4e4c, type: 3}
   _towerTwo: {fileID: 6593060844764577332, guid: 3bcaa0da3d357e54eb6de9c5889cf0bb, type: 3}
-  _towerThree: {fileID: 6593060844764577332, guid: 4d37e948955f29042b5a0ffea4211635, type: 3}
-  _towerFour: {fileID: 4227922121606088637, guid: 37a8e5d942f6aea439cc79372b391664, type: 3}
+  _towerThree: {fileID: 4227922121606088637, guid: 37a8e5d942f6aea439cc79372b391664, type: 3}
+  _towerFour: {fileID: 4227922121606088637, guid: 57cc0b3961d74f443b64017aff619b2d, type: 3}
   hoverdColor: {r: 0.3882353, g: 0.3882353, b: 0.3882353, a: 1}
   unhoverdColor: {r: 0.54509807, g: 0.54509807, b: 0.54509807, a: 1}
 --- !u!4 &2120100311 stripped
