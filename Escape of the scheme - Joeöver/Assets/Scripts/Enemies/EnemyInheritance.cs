@@ -27,7 +27,7 @@ abstract class EnemyInheritance : EnitityInheritance
     }
     private void OnTriggerStay2D(Collider2D collision)
     { //by THE component setting select collision continious & never sleeping to make the ontriggerstay act continiously+   
-        print(collision.gameObject.name);
+        //print(collision.gameObject.name);
         if (collision.CompareTag("Tower") || collision.CompareTag("Barricade"))
         {
             _tower = collision.GetComponent<TowerInheritance>();  
@@ -37,9 +37,6 @@ abstract class EnemyInheritance : EnitityInheritance
             if (!_attack)
                 StartCoroutine(Attack(_attackCooldown));
         }
-        
-
-        
     }
 
 

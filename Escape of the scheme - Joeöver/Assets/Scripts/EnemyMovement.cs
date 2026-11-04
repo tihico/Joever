@@ -10,12 +10,14 @@ public class EnemyWaypoints : MonoBehaviour
 
     void Start()
     {
+        // searches waypoints by tag
         Wpoints = GameObject.FindGameObjectWithTag("Waypoints").GetComponent<Waypoints>();
     }
 
 
     void Update()
     {
+        // movement towards each waypoint next in line, and rotating pointing to them.
         transform.position = Vector2.MoveTowards(transform.position, Wpoints.waypoints[waypointIndex].position, speed * Time.deltaTime);
         Vector3 dir = Wpoints.waypoints[waypointIndex].position - transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;

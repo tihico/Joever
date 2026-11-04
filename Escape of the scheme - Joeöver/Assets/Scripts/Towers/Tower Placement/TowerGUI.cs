@@ -46,5 +46,17 @@ public class TowerGUI : MonoBehaviour
     {
         towerInfo = GameObject.FindGameObjectWithTag(_towerTag).GetComponent<TowerInfo>();
         towerInfo.Destroy();
+        if (GameObject.FindGameObjectsWithTag(_towerTag).Length > 0)
+        {
+            towerInfo = GameObject.FindGameObjectWithTag(_towerTag).GetComponent<TowerInfo>();
+            towerInfo.Destroy();
+        }
+
+        if (GameObject.FindGameObjectsWithTag(_towerTag).Length == 1)
+        {
+            _gui.SetActive(false);
+            _guiCheck = false;
+        }
     }
+
 }

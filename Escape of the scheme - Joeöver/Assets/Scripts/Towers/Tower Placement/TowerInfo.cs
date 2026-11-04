@@ -4,8 +4,6 @@ using UnityEngine.UIElements;
 
 public class TowerInfo : MonoBehaviour
 {
-    [SerializeField] private int _tower;
-
     void Start()
     {
 
