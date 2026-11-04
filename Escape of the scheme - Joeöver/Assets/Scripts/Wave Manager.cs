@@ -2,12 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class WaveManager : MonoBehaviour
 {
-    //[SerializeField] private Button startWaveButton;
     [SerializeField] private GameObject[] enemyPrefabs;
     [SerializeField] private int baseEnemies = 8;
     [SerializeField] private float enemiesPerSecond = 0.5f;
@@ -21,6 +18,7 @@ public class WaveManager : MonoBehaviour
     private bool isSpawning = false;
 
     public static UnityEvent onEnemyDestroy = new UnityEvent();
+    private SceneLoader _scene;
 
     private void Awake()
     {
@@ -29,7 +27,8 @@ public class WaveManager : MonoBehaviour
 
     private void Start()
     {
-       // StartCoroutine(StartWave());
+        _scene = FindAnyObjectByType<SceneLoader>();
+        StartCoroutine(StartWave());
         Debug.Log("Wave started");
     }
     private void Update()
@@ -44,7 +43,7 @@ public class WaveManager : MonoBehaviour
             enemiesAlive++;
             timeSinceLastSpawn = 0f;
         }
-        if (enemiesAlive == 0 && enemiesLeftToSpawn <= 0 )
+        if (enemiesAlive == 0 && enemiesLeftToSpawn == 0 )
         {
             EndWave();
         }
@@ -53,13 +52,12 @@ public class WaveManager : MonoBehaviour
     private void EnemyDestroyed()
     {
         enemiesAlive--;
-        if (enemiesAlive < 0) enemiesAlive = 0;
         Debug.Log(enemiesAlive + "enemiesAlive");
     }
     private IEnumerator StartWave()
     {
+        
         Debug.Log("Wave started");
-       // startWaveButton.interactable = false;
         yield return new WaitForSeconds(timeBetweenWaves);
         isSpawning = true;
         enemiesLeftToSpawn = EnemiesPerWave();
@@ -68,20 +66,17 @@ public class WaveManager : MonoBehaviour
     private void EndWave()
     {
         Debug.Log("Wave ended");
-       // startWaveButton.interactable = false;
         isSpawning = false;
-        timeSinceLastSpawn = 1f;
+        timeSinceLastSpawn = 0f;
         currentWave++;
+        _scene.LoadScene(currentWave);
         StartCoroutine(StartWave());
     }
-    public void SpawnEnemy()
+    private void SpawnEnemy()
     {
-        if (enemyPrefabs == null || enemyPrefabs.Length == 0) return;
-        int randomIndex = Random.Range(0, enemyPrefabs.Length);
-        GameObject prefabToSpawn = enemyPrefabs[randomIndex];
         Debug.Log("Spawn Enemy");
+        GameObject prefabToSpawn = enemyPrefabs[0];
         Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
-        timeSinceLastSpawn = 0f;
         // change transform later 
     }
 
