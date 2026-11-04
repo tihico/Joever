@@ -5,7 +5,7 @@ class BulletExplode : Bullet
 {
     [SerializeField] private GameObject _Explosion;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private new void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {

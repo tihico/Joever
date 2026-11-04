@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class WaveManager : MonoBehaviour
 {
+    [SerializeField] private Button startWaveButton;
     [SerializeField] private GameObject[] enemyPrefabs;
     [SerializeField] private int baseEnemies = 8;
     [SerializeField] private float enemiesPerSecond = 0.5f;
@@ -26,7 +28,7 @@ public class WaveManager : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(StartWave());
+       // StartCoroutine(StartWave());
         Debug.Log("Wave started");
     }
     private void Update()
@@ -41,7 +43,7 @@ public class WaveManager : MonoBehaviour
             enemiesAlive++;
             timeSinceLastSpawn = 0f;
         }
-        if (enemiesAlive == 0 && enemiesLeftToSpawn == 0 )
+        if (enemiesAlive == 0 && enemiesLeftToSpawn <= 0 )
         {
             EndWave();
         }
@@ -50,11 +52,13 @@ public class WaveManager : MonoBehaviour
     private void EnemyDestroyed()
     {
         enemiesAlive--;
+        if (enemiesAlive < 0) enemiesAlive = 0;
         Debug.Log(enemiesAlive + "enemiesAlive");
     }
     private IEnumerator StartWave()
     {
         Debug.Log("Wave started");
+       // startWaveButton.interactable = false;
         yield return new WaitForSeconds(timeBetweenWaves);
         isSpawning = true;
         enemiesLeftToSpawn = EnemiesPerWave();
@@ -63,16 +67,20 @@ public class WaveManager : MonoBehaviour
     private void EndWave()
     {
         Debug.Log("Wave ended");
+       // startWaveButton.interactable = false;
         isSpawning = false;
-        timeSinceLastSpawn = 0f;
+        timeSinceLastSpawn = 1f;
         currentWave++;
         StartCoroutine(StartWave());
     }
-    private void SpawnEnemy()
+    public void SpawnEnemy()
     {
+        if (enemyPrefabs == null || enemyPrefabs.Length == 0) return;
+        int randomIndex = Random.Range(0, enemyPrefabs.Length);
+        GameObject prefabToSpawn = enemyPrefabs[randomIndex];
         Debug.Log("Spawn Enemy");
-        GameObject prefabToSpawn = enemyPrefabs[0];
         Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
+        timeSinceLastSpawn = 0f;
         // change transform later 
     }
 
