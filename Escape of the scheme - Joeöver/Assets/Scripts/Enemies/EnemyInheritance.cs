@@ -37,9 +37,6 @@ abstract class EnemyInheritance : EnitityInheritance
             if (!_attack)
                 StartCoroutine(Attack(_attackCooldown));
         }
-        
-
-        
     }
 
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8388756166979895195}
   - component: {fileID: 4764894764162360413}
   - component: {fileID: 4613385610835472057}
+  - component: {fileID: 873362760480988249}
   m_Layer: 0
   m_Name: Triangle Boss
   m_TagString: Enemy
@@ -173,6 +174,19 @@ MonoBehaviour:
   _dmg: 50
   _attackCooldown: 2
   _goldGain: 240
+--- !u!114 &873362760480988249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7550854755180978005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfba779330b9e54889e52e55747726d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
 --- !u!1 &8154719414945486510
 GameObject:
   m_ObjectHideFlags: 0
