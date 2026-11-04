@@ -301,7 +301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5587772305173968778, guid: 8d136d1806664de4f8d2d872b35c41e1, type: 3}
       propertyPath: m_Name
-      value: Canvas
+      value: DeathScreen
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
