@@ -1,16 +1,22 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private string _scene;
+    private WaveManager _wave;
     void Start()
     {
-        
+        _wave = FindAnyObjectByType<WaveManager>();
     }
 
     // Update is called once per frame
-    void Update()
+    public void LoadScene(int wave)
     {
-        
+        if (wave >= 11)
+        {
+            SceneManager.LoadScene(_scene);
+        }
     }
+
 }

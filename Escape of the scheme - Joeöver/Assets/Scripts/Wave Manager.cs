@@ -18,6 +18,7 @@ public class WaveManager : MonoBehaviour
     private bool isSpawning = false;
 
     public static UnityEvent onEnemyDestroy = new UnityEvent();
+    private SceneLoader _scene;
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class WaveManager : MonoBehaviour
 
     private void Start()
     {
+        _scene = FindAnyObjectByType<SceneLoader>();
         StartCoroutine(StartWave());
         Debug.Log("Wave started");
     }
@@ -54,6 +56,7 @@ public class WaveManager : MonoBehaviour
     }
     private IEnumerator StartWave()
     {
+        
         Debug.Log("Wave started");
         yield return new WaitForSeconds(timeBetweenWaves);
         isSpawning = true;
@@ -66,6 +69,7 @@ public class WaveManager : MonoBehaviour
         isSpawning = false;
         timeSinceLastSpawn = 0f;
         currentWave++;
+        _scene.LoadScene(currentWave);
         StartCoroutine(StartWave());
     }
     private void SpawnEnemy()
