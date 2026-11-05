@@ -7,6 +7,7 @@ public class EnemyWaypoints : MonoBehaviour
     public float speed;
     private Waypoints Wpoints;
     private int waypointIndex;
+    
 
     void Start()
     {
@@ -30,6 +31,7 @@ public class EnemyWaypoints : MonoBehaviour
         } else
             {
                 Destroy(gameObject);
+                
             }
     }
 }
