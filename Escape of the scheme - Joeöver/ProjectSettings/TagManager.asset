@@ -12,6 +12,9 @@ TagManager:
   - gui
   - Barricade
   - Waypoints
+  - Bullet
+  - Explosion
+  - path
   layers:
   - Default
   - TransparentFX

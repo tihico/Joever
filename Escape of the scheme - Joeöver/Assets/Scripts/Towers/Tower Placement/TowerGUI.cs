@@ -16,6 +16,9 @@ public class TowerGUI : MonoBehaviour
 
     TowerInfo towerInfo;
 
+    /*Dit script zorgt ervoor dat je de tower GUI kan openen als je op een tower klikt en dat--
+    je de tower GUI kan sluiten als je een tower verkoopt.*/
+
     void Update()
     {
         mousePosition = Input.mousePosition;
@@ -44,8 +47,6 @@ public class TowerGUI : MonoBehaviour
 
     public void SellTower()
     {
-        towerInfo = GameObject.FindGameObjectWithTag(_towerTag).GetComponent<TowerInfo>();
-        towerInfo.Destroy();
         if (GameObject.FindGameObjectsWithTag(_towerTag).Length > 0)
         {
             towerInfo = GameObject.FindGameObjectWithTag(_towerTag).GetComponent<TowerInfo>();
