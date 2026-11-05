@@ -20,7 +20,7 @@ using UnityEngine;
     }
     protected virtual void Move()
     {
-        transform.Translate(Vector3.right * _speedValue * Time.deltaTime);
+        transform.Translate(Vector3.left * _speedValue * Time.deltaTime);
     }
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
