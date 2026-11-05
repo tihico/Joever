@@ -18,7 +18,7 @@ public class Rescources : MonoBehaviour
         ChangeText();
     }
 
-    public int Test()
+    public int CheckResources()
     {
         return _resources;
     }
