@@ -10,7 +10,7 @@ abstract class BarricadeInheritance : TowerInheritance
         Attack(Dmg);
     }
 
-    public override void Attack(float Dmg)
+    public void Attack(float Dmg)
     {
         Debug.Log("reflecting dmg");
        

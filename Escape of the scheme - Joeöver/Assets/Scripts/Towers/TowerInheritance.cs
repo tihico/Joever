@@ -25,7 +25,7 @@ abstract class TowerInheritance : EnitityInheritance
     {
         _spawner = GetComponent<BulletSpawner>();
     }
-    public virtual void Attack(float Dmg)
+    public void SpawnBullet()
     {
         _spawner.SpawnBullet();
     }
@@ -47,7 +47,7 @@ abstract class TowerInheritance : EnitityInheritance
     {
         _attack = true;
         yield return new WaitForSeconds(attackCooldown);
-        Attack(_dmg);
+        SpawnBullet();
         _attack = false;
     }
 
