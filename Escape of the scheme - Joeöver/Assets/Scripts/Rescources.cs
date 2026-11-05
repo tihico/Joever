@@ -3,15 +3,29 @@ using UnityEngine;
 
 public class Rescources : MonoBehaviour
 {
-    [SerializeField] private int _rescources;
-    [SerializeField] private GameObject _text;
+    [SerializeField] private int _resources;
+    [SerializeField] private TextMeshProUGUI _text;
 
-
-    public void GainRecources(int ammount)
+    void Start()
     {
-        _rescources += ammount;
+        _text.text = $"Resources: {_resources}";
+    }
 
-        //rescource display for the UI
-        _text.GetComponent<TextMeshProUGUI>().text = $"Rescources: {_rescources}";
+    public void GainRecources(int amount)
+    {
+        _resources += amount;
+
+        ChangeText();
+    }
+
+    public int Test()
+    {
+        return _resources;
+    }
+
+    public void ChangeText()
+    {
+        //resource display for the UI
+        _text.text = $"Resources: {_resources}";
     }
 }

@@ -4,6 +4,10 @@ using UnityEngine.UIElements;
 
 public class TowerInfo : MonoBehaviour
 {
+    [SerializeField] private int _value;
+    private Rescources rescources;
+
+
     void Start()
     {
 
@@ -12,5 +16,8 @@ public class TowerInfo : MonoBehaviour
     public void Destroy()
     {
         Destroy(gameObject);
+
+        rescources = GameObject.FindAnyObjectByType<Rescources>();
+        rescources.GainRecources(_value);
     }
 }

@@ -8,11 +8,15 @@ abstract class EnitityInheritance : MonoBehaviour
     [SerializeField] protected string _desc;
     [SerializeField] private GameObject _gameObject;
 
+    Rescources rescources;
+
     public virtual void Death()
     {
         if(_hp <= 0)
         {
             Destroy (gameObject);
+
+            rescources.GainRecources(20);
         }
     }
 }
