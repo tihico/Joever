@@ -8,7 +8,7 @@ abstract class TowerInheritance : EnitityInheritance
     [SerializeField] protected float _dmg;
     [SerializeField] protected int _range;
     private BulletSpawner _spawner;
-    private bool _attack = false;
+    protected bool _attack = false;
     [SerializeField] protected float _attackCooldown;
 
     protected EnemyInheritance _enemy;

@@ -11,7 +11,6 @@ namespace Assets.Scripts.Towers
     class TrapTower : TowerInheritance
     {
         
-        private bool _attack;
        
              private void OnTriggerStay2D(Collider2D collision)
         { //by THE component setting select collision continious & never sleeping to make the ontriggerstay act continiously+   
