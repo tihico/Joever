@@ -11,6 +11,7 @@ class BaseScript : EnitityInheritance
         if (collision.CompareTag("Enemy"))
         {
             _hp--;
+            Destroy(collision);
         }
     }
     public override void Death()

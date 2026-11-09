@@ -79,4 +79,5 @@ abstract class EnemyInheritance : EnitityInheritance
        // _hp -= _barricade.Dmg;
 
     }
+
 }
