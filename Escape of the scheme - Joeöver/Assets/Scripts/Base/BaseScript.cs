@@ -8,7 +8,7 @@ class BaseScript : EnitityInheritance
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") || collision.CompareTag("Hidden"))
         {
             _hp--;
             Destroy(collision);
