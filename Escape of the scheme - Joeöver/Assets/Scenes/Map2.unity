@@ -778,10 +778,12 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 4152573948281731807, guid: 27000df28d538b14da0e9bca3dbdc9f5, type: 3}
   - {fileID: 4152573948281731807, guid: 0c1d00ab075bd8947bff43f42c1baeb3, type: 3}
+  BossPrefab: []
   baseEnemies: 8
   enemiesPerSecond: 0.5
   timeBetweenWaves: 20
   difficultyScaling: 0.5
+  currentWave: 1
 --- !u!4 &742868734
 Transform:
   m_ObjectHideFlags: 0
@@ -1682,7 +1684,7 @@ PrefabInstance:
     - target: {fileID: 1138930890033136570, guid: 244ff89cd0a49c74eb1ec3bb149e70c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1944270739}
+      objectReference: {fileID: 1944270737}
     - target: {fileID: 1138930890033136570, guid: 244ff89cd0a49c74eb1ec3bb149e70c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: TowerOne
@@ -1690,7 +1692,7 @@ PrefabInstance:
     - target: {fileID: 1145607003698523973, guid: 244ff89cd0a49c74eb1ec3bb149e70c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1944270739}
+      objectReference: {fileID: 1944270737}
     - target: {fileID: 1145607003698523973, guid: 244ff89cd0a49c74eb1ec3bb149e70c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: TowerTwo
@@ -1726,7 +1728,7 @@ PrefabInstance:
     - target: {fileID: 7202444027864996633, guid: 244ff89cd0a49c74eb1ec3bb149e70c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1944270739}
+      objectReference: {fileID: 1944270737}
     - target: {fileID: 7202444027864996633, guid: 244ff89cd0a49c74eb1ec3bb149e70c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: TowerThree
@@ -2537,47 +2539,30 @@ PrefabInstance:
     - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8206523210804303047, guid: b1c02180997febf4091513e0c07ece2c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1944270739}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1c02180997febf4091513e0c07ece2c, type: 3}
---- !u!1 &1944270737 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8206523210804303047, guid: b1c02180997febf4091513e0c07ece2c, type: 3}
+--- !u!114 &1944270737 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4691496529813240951, guid: b1c02180997febf4091513e0c07ece2c, type: 3}
   m_PrefabInstance: {fileID: 1944270736}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1944270738 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6573311436793425699, guid: b1c02180997febf4091513e0c07ece2c, type: 3}
-  m_PrefabInstance: {fileID: 1944270736}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944270737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfdcd7a4275161a4387aab9b1897b19e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1944270739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944270737}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f91477c808a097e4ca05e2846dd49500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mapTag: map
-  _pathTag: path
-  _towerOne: {fileID: 4227922121606088637, guid: 37a8e5d942f6aea439cc79372b391664, type: 3}
-  _towerTwo: {fileID: 4227922121606088637, guid: 57cc0b3961d74f443b64017aff619b2d, type: 3}
-  _towerThree: {fileID: 482941950528632285, guid: 694048f4665b1cb448bae8a8805613db, type: 3}
-  _towerOneValue: 40
-  _towerTwoValue: 120
-  _towerThreeValue: 80
+--- !u!114 &1944270738 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6573311436793425699, guid: b1c02180997febf4091513e0c07ece2c, type: 3}
+  m_PrefabInstance: {fileID: 1944270736}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfdcd7a4275161a4387aab9b1897b19e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1998406453
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -233,10 +233,12 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 4152573948281731807, guid: 27000df28d538b14da0e9bca3dbdc9f5, type: 3}
   - {fileID: 4152573948281731807, guid: 0c1d00ab075bd8947bff43f42c1baeb3, type: 3}
+  BossPrefab: []
   baseEnemies: 8
   enemiesPerSecond: 0.5
   timeBetweenWaves: 20
   difficultyScaling: 0.5
+  currentWave: 1
 --- !u!1 &847891158
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,7 +708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &2057068395 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7542909905085926404, guid: b1c02180997febf4091513e0c07ece2c, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4691496529813240951, guid: b1c02180997febf4091513e0c07ece2c, type: 3}
   m_PrefabInstance: {fileID: 5955597734131394152}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -845,10 +847,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2057068395}
+    - target: {fileID: 1138930890033136570, guid: 244ff89cd0a49c74eb1ec3bb149e70c5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TowerOne
+      objectReference: {fileID: 0}
     - target: {fileID: 1145607003698523973, guid: 244ff89cd0a49c74eb1ec3bb149e70c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2057068395}
+    - target: {fileID: 1145607003698523973, guid: 244ff89cd0a49c74eb1ec3bb149e70c5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TowerTwo
+      objectReference: {fileID: 0}
     - target: {fileID: 2802683695663983032, guid: 244ff89cd0a49c74eb1ec3bb149e70c5, type: 3}
       propertyPath: m_Name
       value: CanvasGUI
@@ -865,6 +875,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2057068395}
+    - target: {fileID: 7202444027864996633, guid: 244ff89cd0a49c74eb1ec3bb149e70c5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TowerThree
+      objectReference: {fileID: 0}
     - target: {fileID: 7564327189224426163, guid: 244ff89cd0a49c74eb1ec3bb149e70c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

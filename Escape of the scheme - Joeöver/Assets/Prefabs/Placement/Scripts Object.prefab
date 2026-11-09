@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3637181088128322156}
   - component: {fileID: 6573311436793425699}
+  - component: {fileID: 4691496529813240951}
   m_Layer: 0
   m_Name: Scripts Object
   m_TagString: Untagged
@@ -46,3 +47,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _towerTag: tower
   _gui: {fileID: 0}
+--- !u!114 &4691496529813240951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8206523210804303047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f91477c808a097e4ca05e2846dd49500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mapTag: map
+  _pathTag: path
+  _towerOne: {fileID: 4227922121606088637, guid: 37a8e5d942f6aea439cc79372b391664, type: 3}
+  _towerTwo: {fileID: 4227922121606088637, guid: 57cc0b3961d74f443b64017aff619b2d, type: 3}
+  _towerThree: {fileID: 482941950528632285, guid: 694048f4665b1cb448bae8a8805613db, type: 3}
+  _towerOneValue: 40
+  _towerTwoValue: 120
+  _towerThreeValue: 80
