@@ -1,56 +1,72 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class WaveManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemyPrefabs;
-    [SerializeField] private GameObject[] BossPrefab;
+    [SerializeField] private GameObject enemyPrefab1;
+    [SerializeField] private GameObject enemyPrefab2;
+    [SerializeField] private GameObject enemyPrefab3;
+    [SerializeField] private GameObject bossPrefab;
     [SerializeField] private int baseEnemies = 8;
     [SerializeField] private float enemiesPerSecond = 0.5f;
     [SerializeField] private float timeBetweenWaves = 2f;
-    [SerializeField] private float difficultyScaling = 0.5f;
+    [SerializeField] private int difficultyScaling = 2;
+    [SerializeField] private Button Button1;
 
-    [SerializeField] private int currentWave = 1;
-    private float timeSinceLastSpawn;
-    private int enemiesAlive;
-    private int enemiesLeftToSpawn;
-    private bool isSpawning = false;
+    [SerializeField] private int currentWave = 0;
+    [SerializeField] private float timeSinceLastSpawn;
+    [SerializeField] private int enemiesAlive;
+    [SerializeField] private int enemiesLeftToSpawn;
+    [SerializeField] private bool isSpawning = false;
+    private bool bossSpawnedThisWave = false;
 
     public static UnityEvent onEnemyDestroy = new UnityEvent();
     private SceneLoader _scene;
 
     private void Awake()
     {
+        onEnemyDestroy.RemoveAllListeners();
         onEnemyDestroy.AddListener(EnemyDestroyed);
+        Debug.Log("Awake");
     }
-
-    private void Start()
+       public void Button()
     {
-        _scene = FindAnyObjectByType<SceneLoader>();
         StartCoroutine(StartWave());
-        Debug.Log("Wave started");
+        Button1.interactable = false;
+        _scene = FindAnyObjectByType<SceneLoader>();
+        Debug.Log("Start");
     }
+    //public void Button()
+    //{
+    //    if (isSpawning) return;
+    //    currentWave++;
+    //    Debug.Log("Button Start");
+    //    StartCoroutine(StartWave());
+    //}
     private void Update()
     {
         if (!isSpawning) return;
         timeSinceLastSpawn += Time.deltaTime;
 
-        if(timeSinceLastSpawn >= (1f / enemiesPerSecond) && enemiesLeftToSpawn > 0)
+        if (timeSinceLastSpawn >= (1f / enemiesPerSecond) && enemiesLeftToSpawn > 0)
         {
             SpawnEnemy();
             enemiesLeftToSpawn--;
             enemiesAlive++;
             timeSinceLastSpawn = 0f;
         }
-        if (enemiesAlive == 0 && enemiesLeftToSpawn == 0 )
+        if (enemiesAlive == 0 && enemiesLeftToSpawn == 0)
         {
             EndWave();
         }
     }
-
     private void EnemyDestroyed()
     {
         enemiesAlive--;
@@ -58,43 +74,80 @@ public class WaveManager : MonoBehaviour
     }
     private IEnumerator StartWave()
     {
-        
+
         Debug.Log("Wave started");
         yield return new WaitForSeconds(timeBetweenWaves);
         isSpawning = true;
         enemiesLeftToSpawn = EnemiesPerWave();
     }
-    
+
     private void EndWave()
     {
+        Button1.interactable = true;
         Debug.Log("Wave ended");
         isSpawning = false;
         timeSinceLastSpawn = 0f;
         currentWave++;
+       
         _scene.LoadScene(currentWave);
-        StartCoroutine(StartWave());
     }
     private void SpawnEnemy()
     {
-        if (enemyPrefabs == null || enemyPrefabs.Length == 0) return;
-        int randomIndex = Random.Range(0, enemyPrefabs.Length);
-        GameObject prefabToSpawn = enemyPrefabs[randomIndex];
-        Debug.Log("Spawn Enemy");
-        Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
-        timeSinceLastSpawn = 0f;
-        // change transform later 
+        Debug.Log("SpawnEnemy");
+        /*
+         I want to either set the enemies myself per round or, randomize it because that sounds
+        easier, besides that i want the amount of enemies to increase per round, by 2 or more or so
+        then on the final wave i want the boss to spawn
 
 
-       if (currentWave == 10)
+        for each () {} randomizer
+        if index = 1 spawn prefab tier 1 chud enemy
+        if index = 2 spawn prefab tier 2 enemy
+        if index = 3 spawn prefab anti bullet
+        if wave 10 = spawn boss
+
+
+
+
+         */
+        //  if (enemyPrefabs == null || enemyPrefabs.Length == 0) return;
+        /*  List<GameObject> prefabToSpawn = new List<GameObject>();
+          prefabToSpawn.Add(new GameObject(enemyPrefab1));
+          foreach (GameObject prefabToSpawn)
+          {
+              Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
+          } */
+        //   GameObject[] enemyPrefabs =
+        //     {
+        //         enemyPrefab1,
+        //         enemyPrefab2,
+        //         enemyPrefab3
+        //     };
+
+        //   foreach ( in baseEnemies)
+        //     {
+        //         Instantiate(enemyPrefabs[], transform.position, Quaternion.identity);
+        //     } 
+        if (currentWave == 10 && bossPrefab != null && bossSpawnedThisWave == false)
         {
-            GameObject BossSpawner = BossPrefab[0];
+            enemiesAlive++;
+            GameObject BossSpawner = bossPrefab;
             Instantiate(BossSpawner, transform.position, Quaternion.identity);
+            bossSpawnedThisWave = true;
         }
-    }
+
+        int randomIndex = UnityEngine.Random.Range(0, enemyPrefabs.Length);
+        GameObject prefabToSpawn = enemyPrefabs[randomIndex];
+        Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
+            timeSinceLastSpawn = 0f;
+            Debug.Log("Spawn Enemy");
+        }
+    
 
 
     private int EnemiesPerWave()
     {
-        return Mathf.RoundToInt(baseEnemies * Mathf.Pow(currentWave, difficultyScaling));
+        Debug.Log("EnemiesPerWave");
+        return (baseEnemies + (currentWave + difficultyScaling));
     }
 }

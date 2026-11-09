@@ -14,10 +14,11 @@ abstract class EnitityInheritance : MonoBehaviour
     }
     public virtual void Death()
     {
-        if(_hp <= 0)
+        if (_hp <= 0)
         {
             Destroy(gameObject);
 
         }
     }
+
 }

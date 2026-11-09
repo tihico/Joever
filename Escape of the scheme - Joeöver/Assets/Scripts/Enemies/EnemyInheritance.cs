@@ -66,6 +66,7 @@ abstract class EnemyInheritance : EnitityInheritance
     {
         if (_hp <= 0)
         {
+            WaveManager.onEnemyDestroy.Invoke();
             GoldDrop();
             Destroy(gameObject);
         }
