@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class WaveManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemyPrefabs;
+    [SerializeField] private GameObject[] BossPrefab;
     [SerializeField] private int baseEnemies = 8;
     [SerializeField] private float enemiesPerSecond = 0.5f;
     [SerializeField] private float timeBetweenWaves = 2f;
     [SerializeField] private float difficultyScaling = 0.5f;
 
-    private int currentWave = 1;
+    [SerializeField] private int currentWave = 1;
     private float timeSinceLastSpawn;
     private int enemiesAlive;
     private int enemiesLeftToSpawn;
@@ -74,15 +76,25 @@ public class WaveManager : MonoBehaviour
     }
     private void SpawnEnemy()
     {
+        if (enemyPrefabs == null || enemyPrefabs.Length == 0) return;
+        int randomIndex = Random.Range(0, enemyPrefabs.Length);
+        GameObject prefabToSpawn = enemyPrefabs[randomIndex];
         Debug.Log("Spawn Enemy");
-        GameObject prefabToSpawn = enemyPrefabs[0];
         Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
+        timeSinceLastSpawn = 0f;
         // change transform later 
+
+
+       if (currentWave == 10)
+        {
+            GameObject BossSpawner = BossPrefab[0];
+            Instantiate(BossSpawner, transform.position, Quaternion.identity);
+        }
     }
+
 
     private int EnemiesPerWave()
     {
         return Mathf.RoundToInt(baseEnemies * Mathf.Pow(currentWave, difficultyScaling));
     }
-
 }
