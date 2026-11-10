@@ -872,18 +872,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2057068395}
-    - target: {fileID: 1138930890033136570, guid: 244ff89cd0a49c74eb1ec3bb149e70c5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TowerOne
-      objectReference: {fileID: 0}
     - target: {fileID: 1145607003698523973, guid: 244ff89cd0a49c74eb1ec3bb149e70c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2057068395}
-    - target: {fileID: 1145607003698523973, guid: 244ff89cd0a49c74eb1ec3bb149e70c5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TowerTwo
-      objectReference: {fileID: 0}
     - target: {fileID: 2802683695663983032, guid: 244ff89cd0a49c74eb1ec3bb149e70c5, type: 3}
       propertyPath: m_Name
       value: CanvasGUI
@@ -896,22 +888,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2057068393}
-    - target: {fileID: 7202444027864996633, guid: 244ff89cd0a49c74eb1ec3bb149e70c5, type: 3}
+    - target: {fileID: 6259307282326606803, guid: 244ff89cd0a49c74eb1ec3bb149e70c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2057068395}
     - target: {fileID: 7202444027864996633, guid: 244ff89cd0a49c74eb1ec3bb149e70c5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TowerThree
-      objectReference: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2057068395}
     - target: {fileID: 7564327189224426163, guid: 244ff89cd0a49c74eb1ec3bb149e70c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 817591967}
-    - target: {fileID: 7564327189224426163, guid: 244ff89cd0a49c74eb1ec3bb149e70c5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Start
-      objectReference: {fileID: 0}
     - target: {fileID: 8137876695144239866, guid: 244ff89cd0a49c74eb1ec3bb149e70c5, type: 3}
       propertyPath: m_Pivot.x
       value: 0

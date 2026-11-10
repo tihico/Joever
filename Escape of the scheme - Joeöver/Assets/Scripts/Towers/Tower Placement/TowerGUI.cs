@@ -9,6 +9,8 @@ public class TowerGUI : MonoBehaviour
     Transform prevHoverObject, nextHoverObject;
 
     [SerializeField] private string _towerTag;
+    [SerializeField] private string _barricadeTag;
+    [SerializeField] private string _trapTag;
 
     [SerializeField] private GameObject _gui;
 
@@ -30,7 +32,7 @@ public class TowerGUI : MonoBehaviour
         raycastHit2D = Physics2D.Raycast(mouseRay.origin, mouseRay.direction);
         nextHoverObject = raycastHit2D ? raycastHit2D.collider.transform : null;
 
-        if (nextHoverObject && nextHoverObject.CompareTag(_towerTag))
+        if (nextHoverObject && (nextHoverObject.CompareTag(_towerTag) || nextHoverObject.CompareTag(_barricadeTag) || nextHoverObject.CompareTag(_trapTag)))
         {
             if (Input.GetMouseButtonDown(0) && !_guiCheck)
             {
@@ -50,6 +52,16 @@ public class TowerGUI : MonoBehaviour
         if (GameObject.FindGameObjectsWithTag(_towerTag).Length > 0)
         {
             towerInfo = GameObject.FindGameObjectWithTag(_towerTag).GetComponent<TowerInfo>();
+            towerInfo.Destroy();
+        }
+        else if (GameObject.FindGameObjectsWithTag(_barricadeTag).Length > 0)
+        {
+            towerInfo = GameObject.FindGameObjectWithTag(_barricadeTag).GetComponent<TowerInfo>();
+            towerInfo.Destroy();
+        }
+        else if (GameObject.FindGameObjectsWithTag(_trapTag).Length > 0)
+        {
+            towerInfo = GameObject.FindGameObjectWithTag(_trapTag).GetComponent<TowerInfo>();
             towerInfo.Destroy();
         }
 
