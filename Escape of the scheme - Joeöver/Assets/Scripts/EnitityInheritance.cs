@@ -6,17 +6,18 @@ abstract class EnitityInheritance : MonoBehaviour
     [SerializeField] protected float _hp;
     [SerializeField] protected string _name;
     [SerializeField] protected string _desc;
-    [SerializeField] private GameObject _gameObject;
+    [SerializeField] protected GameObject _gameObject;
 
-    Rescources rescources;
-
+    private void Start()
+    {
+        
+    }
     public virtual void Death()
     {
         if (_hp <= 0)
         {
             Destroy(gameObject);
 
-            rescources.GainRecources(20);
         }
     }
 
