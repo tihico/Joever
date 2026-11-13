@@ -50,14 +50,15 @@ MonoBehaviour:
   - {fileID: 3883215864102552449, guid: 37abfa4b7f6d2a5468f71c60d3302a9b, type: 3}
   - {fileID: 4152573948281731807, guid: 27000df28d538b14da0e9bca3dbdc9f5, type: 3}
   enemyPrefab1: {fileID: 4152573948281731807, guid: 27000df28d538b14da0e9bca3dbdc9f5, type: 3}
-  enemyPrefab2: {fileID: 4152573948281731807, guid: 0c1d00ab075bd8947bff43f42c1baeb3, type: 3}
+  enemyPrefab2: {fileID: 4152573948281731807, guid: 2aec7f505ddf49741b5849b44083d145, type: 3}
   enemyPrefab3: {fileID: 3883215864102552449, guid: 37abfa4b7f6d2a5468f71c60d3302a9b, type: 3}
   bossPrefab: {fileID: 7550854755180978005, guid: b9f66731a47d6584699a208f3913fa48, type: 3}
   baseEnemies: 8
-  enemiesPerSecond: 0.5
+  enemiesPerSecond: 0.66
   timeBetweenWaves: 1
   difficultyScaling: 2
   Button1: {fileID: 0}
+  LevelSpawn: []
   currentWave: 0
   timeSinceLastSpawn: 0
   enemiesAlive: 0

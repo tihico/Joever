@@ -142,5 +142,5 @@ MonoBehaviour:
   _desc: 
   _gameObject: {fileID: 0}
   _speedValue: 0
-  _damageValue: 75
+  _damageValue: 100
   lifetime: 0.25

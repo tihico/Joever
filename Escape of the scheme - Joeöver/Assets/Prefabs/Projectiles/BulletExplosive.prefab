@@ -120,7 +120,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -180,6 +180,6 @@ MonoBehaviour:
   _desc: 
   _gameObject: {fileID: 0}
   _speedValue: 5
-  _damageValue: 20
+  _damageValue: 0
   lifetime: 5
   _Explosion: {fileID: 8888149761011183991, guid: 5a45890eb5b1ce741a4edb1b5087561f, type: 3}

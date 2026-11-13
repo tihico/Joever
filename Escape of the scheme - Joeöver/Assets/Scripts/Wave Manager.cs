@@ -130,7 +130,7 @@ public class WaveManager : MonoBehaviour
         //     {
         //         Instantiate(enemyPrefabs[], transform.position, Quaternion.identity);
         //     } 
-        if (currentWave == 11 && bossSpawnedThisWave == false && enemiesAlive == 1)
+        if (currentWave == 10 && bossSpawnedThisWave == false && enemiesLeftToSpawn == 1)
         {
             enemiesAlive++;
             GameObject BossSpawner = bossPrefab;
