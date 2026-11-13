@@ -7,7 +7,7 @@ class BulletExplode : Bullet
 
     private new void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Hidden"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             Instantiate(_Explosion, transform.position, transform.rotation);
             Destroy(this.gameObject);

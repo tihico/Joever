@@ -19,6 +19,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private float timeBetweenWaves = 2f;
     [SerializeField] private int difficultyScaling = 2;
     [SerializeField] private Button Button1;
+    [SerializeField] private GameObject[] LevelSpawn;
 
     [SerializeField] private int currentWave = 0;
     [SerializeField] private float timeSinceLastSpawn;
@@ -34,14 +35,14 @@ public class WaveManager : MonoBehaviour
     {
         onEnemyDestroy.RemoveAllListeners();
         onEnemyDestroy.AddListener(EnemyDestroyed);
-        Debug.Log("Awake");
+       // Debug.Log("Awake");
     }
        public void Button()
     {
         StartCoroutine(StartWave());
         Button1.interactable = false;
         _scene = FindAnyObjectByType<SceneLoader>();
-        Debug.Log("Start");
+       // Debug.Log("Start");
     }
     //public void Button()
     //{
@@ -70,12 +71,12 @@ public class WaveManager : MonoBehaviour
     private void EnemyDestroyed()
     {
         enemiesAlive--;
-        Debug.Log(enemiesAlive + "enemiesAlive");
+      //  Debug.Log(enemiesAlive + "enemiesAlive");
     }
     private IEnumerator StartWave()
     {
 
-        Debug.Log("Wave started");
+        //Debug.Log("Wave started");
         yield return new WaitForSeconds(timeBetweenWaves);
         isSpawning = true;
         enemiesLeftToSpawn = EnemiesPerWave();
@@ -93,7 +94,8 @@ public class WaveManager : MonoBehaviour
     }
     private void SpawnEnemy()
     {
-        Debug.Log("SpawnEnemy");
+        int randomSpawnIndex = UnityEngine.Random.Range(0, LevelSpawn.Length);
+        Vector3 spawnPosition = LevelSpawn[randomSpawnIndex].transform.position;
         /*
          I want to either set the enemies myself per round or, randomize it because that sounds
         easier, besides that i want the amount of enemies to increase per round, by 2 or more or so
@@ -128,26 +130,26 @@ public class WaveManager : MonoBehaviour
         //     {
         //         Instantiate(enemyPrefabs[], transform.position, Quaternion.identity);
         //     } 
-        if (currentWave == 10 && bossPrefab != null && bossSpawnedThisWave == false)
+        if (currentWave == 11 && bossSpawnedThisWave == false && enemiesAlive == 1)
         {
             enemiesAlive++;
             GameObject BossSpawner = bossPrefab;
-            Instantiate(BossSpawner, transform.position, Quaternion.identity);
+            Instantiate(BossSpawner, spawnPosition, Quaternion.identity);
             bossSpawnedThisWave = true;
         }
 
         int randomIndex = UnityEngine.Random.Range(0, enemyPrefabs.Length);
         GameObject prefabToSpawn = enemyPrefabs[randomIndex];
-        Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
+        Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
             timeSinceLastSpawn = 0f;
-            Debug.Log("Spawn Enemy");
+         //   Debug.Log("Spawn Enemy");
         }
     
 
 
     private int EnemiesPerWave()
     {
-        Debug.Log("EnemiesPerWave");
-        return (baseEnemies + (currentWave + difficultyScaling));
+       // Debug.Log("EnemiesPerWave");
+        return (baseEnemies + (currentWave * difficultyScaling));
     }
 }

@@ -133,9 +133,9 @@ MonoBehaviour:
   _name: Trap
   _desc: a hidde trap that attacks enemies
   _gameObject: {fileID: 4067327862300219394}
-  _dmg: 15
+  _dmg: 1
   _range: 0
-  _attackCooldown: 6
+  _attackCooldown: 0.01
 --- !u!58 &6825172610652216056
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -171,4 +171,21 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
+<<<<<<< Updated upstream
   m_Radius: 0.5
+=======
+  m_Radius: 0.6
+--- !u!114 &273070789711423980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4067327862300219394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb4e3f8d8287f04bb1ea04ff134e071, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _value: 120
+>>>>>>> Stashed changes

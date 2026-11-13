@@ -20,7 +20,7 @@ abstract class BarricadeInheritance : TowerInheritance
     //fixed the reflection dmg after a long hour of work xd, thigns i did wrong forgor enemy tag, was juggeling the Attack(); between the triggerstay and dmgtaken aka INSTA kill when i started it fixed that 1 quik. and i had to put 1.3f but had 3f :/
     private void OnTriggerStay2D(Collider2D collision)
     { //by THE component setting select collision continious & never sleeping to make the ontriggerstay act continiously+   
-        print(collision.gameObject.name);
+       // print(collision.gameObject.name);
         if (collision.CompareTag("Enemy") || CompareTag("Hidden"))
         {
             _enemy = collision.GetComponent<EnemyInheritance>();
