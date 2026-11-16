@@ -11,7 +11,8 @@ abstract class TowerInheritance : EnitityInheritance
     protected bool _attack = false;
     [SerializeField] protected float _attackCooldown;
 
-    protected EnemyInheritance _enemy;
+    protected EnemyInheritance _enemy; //turn this into a list 
+    //a mistake I made ehre i that I should've made an attack inheritance seprately as it would allowe me to put it on the 'range child-object' wich would prevent the oversized hitbox I have currently
     public float Dmg
     {
         get

@@ -16,7 +16,7 @@ abstract class EnitityInheritance : MonoBehaviour
     {
         if (_hp <= 0)
         {
-            Destroy(gameObject);
+            Destroy(_gameObject);
 
         }
     }
