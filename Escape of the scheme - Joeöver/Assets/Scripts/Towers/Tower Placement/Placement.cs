@@ -16,10 +16,12 @@ public class Placement : MonoBehaviour
     [SerializeField] private GameObject _towerOne;
     [SerializeField] private GameObject _towerTwo;
     [SerializeField] private GameObject _towerThree;
+    [SerializeField] private GameObject _towerFour;
 
     [SerializeField] private int _towerOneValue;
     [SerializeField] private int _towerTwoValue;
     [SerializeField] private int _towerThreeValue;
+    [SerializeField] private int _towerFourValue;
 
     private int _towerSelected = 0;
 
@@ -67,11 +69,22 @@ public class Placement : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
+                Vector3 position = raycastHit2D.transform.position;
+
+                rescources = GameObject.FindAnyObjectByType<Rescources>();
+
                 if (_towerSelected == 3 && rescources.CheckResources() >= _towerThreeValue)
                 {
                     Instantiate(_towerThree, mouseRay.origin, quaternion.identity);
 
                     rescources.GainRecources(-_towerThreeValue);
+                    _towerSelected = 0;
+                }
+                else if (_towerSelected == 4 && rescources.CheckResources() >= _towerFourValue)
+                {
+                    Instantiate(_towerFour, mouseRay.origin, quaternion.identity);
+
+                    rescources.GainRecources(-_towerFourValue);
                     _towerSelected = 0;
                 }
             }
@@ -92,5 +105,10 @@ public class Placement : MonoBehaviour
     public void TowerThree()
     {
         _towerSelected = 3;
+    }
+
+    public void TowerFour()
+    {
+        _towerSelected = 4;
     }
 }

@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _towerTag: tower
+  _barricadeTag: Barricade
+  _trapTag: Trap
   _gui: {fileID: 0}
 --- !u!114 &4691496529813240951
 MonoBehaviour:
@@ -64,6 +66,8 @@ MonoBehaviour:
   _towerOne: {fileID: 4227922121606088637, guid: 37a8e5d942f6aea439cc79372b391664, type: 3}
   _towerTwo: {fileID: 4227922121606088637, guid: 57cc0b3961d74f443b64017aff619b2d, type: 3}
   _towerThree: {fileID: 482941950528632285, guid: 694048f4665b1cb448bae8a8805613db, type: 3}
+  _towerFour: {fileID: 4067327862300219394, guid: 6c65f66c6b499cf4b92ab3a58ce9bcc8, type: 3}
   _towerOneValue: 40
-  _towerTwoValue: 120
+  _towerTwoValue: 60
   _towerThreeValue: 80
+  _towerFourValue: 120
