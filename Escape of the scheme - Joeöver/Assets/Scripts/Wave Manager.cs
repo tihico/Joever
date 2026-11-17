@@ -6,10 +6,12 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.Windows;
 
 public class WaveManager : MonoBehaviour
 {
-    [SerializeField] private GameObject[] enemyPrefabs;
+    //  [SerializeField] private GameObject[] enemyPrefabs;
+    [SerializeField] private List<GameObject> enemyPrefabs = new List<GameObject>();
     [SerializeField] private GameObject enemyPrefab1;
     [SerializeField] private GameObject enemyPrefab2;
     [SerializeField] private GameObject enemyPrefab3;
@@ -75,7 +77,10 @@ public class WaveManager : MonoBehaviour
     }
     private IEnumerator StartWave()
     {
-
+        if (currentWave == 5 && !enemyPrefabs.Contains(enemyPrefab3))
+        {
+            enemyPrefabs.Add(enemyPrefab3);
+        }
         //Debug.Log("Wave started");
         yield return new WaitForSeconds(timeBetweenWaves);
         isSpawning = true;
@@ -94,8 +99,6 @@ public class WaveManager : MonoBehaviour
     }
     private void SpawnEnemy()
     {
-        int randomSpawnIndex = UnityEngine.Random.Range(0, LevelSpawn.Length);
-        Vector3 spawnPosition = LevelSpawn[randomSpawnIndex].transform.position;
         /*
          I want to either set the enemies myself per round or, randomize it because that sounds
         easier, besides that i want the amount of enemies to increase per round, by 2 or more or so
@@ -130,6 +133,8 @@ public class WaveManager : MonoBehaviour
         //     {
         //         Instantiate(enemyPrefabs[], transform.position, Quaternion.identity);
         //     } 
+        int randomSpawnIndex = UnityEngine.Random.Range(0, LevelSpawn.Length);
+        Vector3 spawnPosition = LevelSpawn[randomSpawnIndex].transform.position;
         if (currentWave == 10 && bossSpawnedThisWave == false && enemiesLeftToSpawn == 1)
         {
             enemiesAlive++;
@@ -138,12 +143,13 @@ public class WaveManager : MonoBehaviour
             bossSpawnedThisWave = true;
         }
 
-        int randomIndex = UnityEngine.Random.Range(0, enemyPrefabs.Length);
+        int randomIndex = UnityEngine.Random.Range(0, enemyPrefabs.Count);
         GameObject prefabToSpawn = enemyPrefabs[randomIndex];
         Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
             timeSinceLastSpawn = 0f;
-         //   Debug.Log("Spawn Enemy");
-        }
+        //   Debug.Log("Spawn Enemy");
+    }
+    
     
 
 
