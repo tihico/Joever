@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ebdc113259c6934b916d1cecc53eb1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: 10
+  _hp: 20
   _name: Base
   _desc: if it dies so do you
   _gameObject: {fileID: 866575500412925019}

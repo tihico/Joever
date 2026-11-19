@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MouseAim : MonoBehaviour
 {
-
+   [SerializeField] private float angleFromMouse = 180f;
     private Camera mainCamera;
     public bool canLook = true;
 
@@ -34,6 +34,6 @@ public class MouseAim : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         // Rotates the player so its "right" side faces the mouse 
-        transform.rotation = Quaternion.Euler(0, 0, angle - 0f); // my 'up' is forward
+        transform.rotation = Quaternion.Euler(0, 0, angle - angleFromMouse); // my 'up' is forward
     }
 }

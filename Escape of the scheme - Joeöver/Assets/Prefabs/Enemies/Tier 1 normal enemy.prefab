@@ -222,7 +222,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 1.5
+  m_Radius: 1
 --- !u!114 &915992507536935521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,7 +241,7 @@ MonoBehaviour:
   _gameObject: {fileID: 4152573948281731807}
   _dmg: 12
   _attackCooldown: 5
-  _goldGain: 20
+  _goldGain: 10
 --- !u!114 &-6266953683991116354
 MonoBehaviour:
   m_ObjectHideFlags: 0

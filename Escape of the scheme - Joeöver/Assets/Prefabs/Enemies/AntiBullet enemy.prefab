@@ -127,7 +127,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 5
+  m_Radius: 2
 --- !u!50 &5503832809988867859
 Rigidbody2D:
   serializedVersion: 5
@@ -173,7 +173,7 @@ MonoBehaviour:
   _gameObject: {fileID: 3883215864102552449}
   _dmg: 100
   _attackCooldown: 0.1
-  _goldGain: 80
+  _goldGain: 60
 --- !u!114 &4884823162918440707
 MonoBehaviour:
   m_ObjectHideFlags: 0

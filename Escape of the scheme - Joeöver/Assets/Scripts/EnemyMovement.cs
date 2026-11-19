@@ -30,8 +30,7 @@ public class EnemyWaypoints : MonoBehaviour
             waypointIndex++;
         } else
             {
-                WaveManager.onEnemyDestroy.Invoke();
-                Destroy(gameObject);
+           
                 
             }
     }

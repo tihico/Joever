@@ -13,7 +13,7 @@ namespace Assets.Scripts.Enemies
         private Bullet _destroyBullet;
         private void OnTriggerStay2D(Collider2D collision)
         { //by THE component setting select collision continious & never sleeping to make the ontriggerstay act continiously+   
-            print(collision.gameObject.name);
+          //  print(collision.gameObject.name);
             if (collision.CompareTag("Bullet"))
             {
                 _destroyBullet = collision.GetComponent<Bullet>();
