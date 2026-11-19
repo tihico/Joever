@@ -134,7 +134,7 @@ MonoBehaviour:
   _name: Trap
   _desc: a hidde trap that attacks enemies
   _gameObject: {fileID: 4067327862300219394}
-  _dmg: 1
+  _dmg: 0.5
   _range: 0
   _attackCooldown: 0.01
 --- !u!58 &6825172610652216056

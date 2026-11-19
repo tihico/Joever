@@ -172,7 +172,7 @@ MonoBehaviour:
   _desc: the leader of the piramid scheme
   _gameObject: {fileID: 7550854755180978005}
   _dmg: 50
-  _attackCooldown: 2
+  _attackCooldown: 1
   _goldGain: 240
 --- !u!114 &-3326008057380538975
 MonoBehaviour:
